@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="loader"></div>
-<!--     <script type="text/javascript">
+    <script type="text/javascript">
         function getQueryParams(url) {
             var params = {};
             var parser = document.createElement('a');
@@ -38,25 +38,21 @@
         var params = getQueryParams(window.location.href);
         var paramString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
 
-        // // Attempt to open the development version
-        // setTimeout(function() {
-        //     window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest.dev;end?" + paramString;
-        // }, 100);
+        // Attempt to open the development version
+        setTimeout(function() {
+            window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest.dev";
+        }, 100);
 
-        // // Fallback to open the production version if the dev version is not installed
-        // setTimeout(function() {
-        //     window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest;end?" + paramString;
-        // }, 500);
+        // Fallback to open the production version if the dev version is not installed
+        setTimeout(function() {
+            window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest";
+        }, 500);
 
-        // // Final fallback to the Play Store redirect page if neither app is installed
-        // setTimeout(function() {
-        //     window.location.href = "https://play.google.com/store/apps/details?id=com.openkey.guest&" + paramString;
-        // }, 1500);
-    </script> -->
+        // Final fallback to the Play Store redirect page if neither app is installed
+        setTimeout(function() {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.openkey.guest";
+        }, 1500);
+    </script>
 
-    <!-- Test link to directly open the development app -->
-    <div style="text-align: center; margin-top: 50px;">
-        <a href="intent://openkey#Intent;scheme=https;package=com.openkey.guest;end">Open Development App</a>
-    </div>
 </body>
 </html>
