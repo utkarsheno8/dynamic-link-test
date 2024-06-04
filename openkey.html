@@ -2,13 +2,33 @@
 <html>
 <head>
     <title>OpenKey App</title>
-    <meta http-equiv="refresh" content="0; url=https://utkarsheno8.github.io/dynamic-link-test/openkey" />
 </head>
 <body>
     <script type="text/javascript">
+        function openApp(url) {
+            var iframe = document.createElement("iframe");
+            iframe.style.border = "none";
+            iframe.style.width = "1px";
+            iframe.style.height = "1px";
+            iframe.style.position = "absolute";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.src = url;
+            document.body.appendChild(iframe);
+        }
+
+        // Try to open the development version
+        openApp("intent://openkey#Intent;scheme=https;package=com.openkey.guest.dev;end");
+
+        // Wait for 1 second, then try to open the production version if the dev version is not installed
+        setTimeout(function() {
+            openApp("intent://openkey#Intent;scheme=https;package=com.openkey.guest;end");
+        }, 1000);
+
+        // Wait for 2 seconds, then redirect to the Play Store if neither version is installed
         setTimeout(function() {
             window.location.href = "https://play.google.com/store/apps/details?id=com.openkey.guest";
-        }, 1500);
+        }, 2000);
     </script>
 </body>
 </html>
