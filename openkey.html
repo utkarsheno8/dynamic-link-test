@@ -3,7 +3,6 @@
 <head>
     <title>OpenKey App</title>
     <style>
-        /* Add some basic styles for the loader */
         .loader {
             border: 16px solid #f3f3f3;
             border-radius: 50%;
@@ -54,5 +53,10 @@
             window.location.href = "https://play.google.com/store/apps/details?id=com.openkey.guest&" + paramString;
         }, 1500);
     </script>
+
+    <!-- Test link to directly open the development app -->
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="intent://openkey#Intent;scheme=https;package=com.openkey.guest.dev;end">Open Development App</a>
+    </div>
 </body>
 </html>
