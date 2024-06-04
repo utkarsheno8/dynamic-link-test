@@ -38,20 +38,20 @@
         var params = getQueryParams(window.location.href);
         var paramString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
 
-        // Attempt to open the development version
-        setTimeout(function() {
-            window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest.dev;end?" + paramString;
-        }, 100);
+        // // Attempt to open the development version
+        // setTimeout(function() {
+        //     window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest.dev;end?" + paramString;
+        // }, 100);
 
-        // Fallback to open the production version if the dev version is not installed
-        setTimeout(function() {
-            window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest;end?" + paramString;
-        }, 500);
+        // // Fallback to open the production version if the dev version is not installed
+        // setTimeout(function() {
+        //     window.location.href = "intent://openkey#Intent;scheme=https;package=com.openkey.guest;end?" + paramString;
+        // }, 500);
 
-        // Final fallback to the Play Store redirect page if neither app is installed
-        setTimeout(function() {
-            window.location.href = "https://play.google.com/store/apps/details?id=com.openkey.guest&" + paramString;
-        }, 1500);
+        // // Final fallback to the Play Store redirect page if neither app is installed
+        // setTimeout(function() {
+        //     window.location.href = "https://play.google.com/store/apps/details?id=com.openkey.guest&" + paramString;
+        // }, 1500);
     </script>
 
     <!-- Test link to directly open the development app -->
